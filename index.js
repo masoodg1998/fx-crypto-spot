@@ -25,7 +25,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 ///////////************** Mongodb connected or disconnected Events ***********/////////////
 
 mongoose.connection.on('connected', function () {
-    console.log("Mongoose is connected")
+    console.log(`Mongoose is connected ${port}`)
 
 })
 
