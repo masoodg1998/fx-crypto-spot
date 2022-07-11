@@ -18,7 +18,7 @@ app.use("/images", express.static(path.join(__dirname, "/images")))
 
 
 
-let dbURI = process.env.MONGO_URL
+let dbURI = process.env.MONGO_URL||"mongodb+srv://fxcryptospot:03472503500@cluster0.bnnszy5.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 ///////////************** Mongodb connected or disconnected Events ***********/////////////
