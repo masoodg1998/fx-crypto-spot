@@ -10,7 +10,7 @@ const multer = require("multer")
 const path = require("path")
 const cors = require("cors")
 
-const port = process.env.PORT||"5000"
+// const port = process.env.PORT||"5000"
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")))
@@ -30,7 +30,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 ///////////************** Mongodb connected or disconnected Events ***********/////////////
 
 mongoose.connection.on('connected', function () {
-    console.log(`Mongoose is connected ${port}`)
+    console.log(`Mongoose is connected ${process.env.PORT || 5000}`)
 
 })
 
@@ -81,6 +81,6 @@ app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
 
-app.listen(port, ()=>{
+app.listen(process.env.PORT || 5000, ()=>{
     console.log("Backend is running.")
 });
